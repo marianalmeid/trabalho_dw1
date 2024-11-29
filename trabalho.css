@@ -1,0 +1,22 @@
+
+
+body{
+   
+    transition: background-color 0.2s, color 0.2s;
+}
+.claro{
+    background-color: white;
+    color: black;
+}
+.escuro{
+    background-color: black;
+    color: white;
+}
+
+button{
+    width: 2rem;
+    height: 2rem;
+    border:  1px black solid;
+
+}
+
