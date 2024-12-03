@@ -1,35 +1,86 @@
 
 
 body{
+  
+   margin: 0%;
+   padding: 0%;
    
-    transition: background-color 0.2s, color 0.2s;
+   transition: background-color 0.2s, color 0.2s;
+}
+body.dark{
+    background-color: black;
 }
 .container{
     width: 100%;
-    height: 100%;
     padding: 0;
     margin: 0;
-    display: flex;
 }
-header{
-    width: 100%;
-    justify-content: space-between;
-    align-items: start;
-}
-.claro{
-    background-color: white;
-    color: black;
-}
-.escuro{
-    background-color: black;
-    color: white;
+body.dark.container{
+    color:blueviolet
 }
 
-button{
+header{
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+}
+
+.theme{
+    background-color: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    cursor: pointer;
+
+}
+.tarefas{
+    width: 50%;
+    margin-top: 2%;
+    margin-left: 25%;
+}
+
+.tarefasInput{
+    display: flex;
+   
+    height: 2rem;
+    width: 90%;
+}
+
+.tarefasInput input{
+    flex: 1;
+    padding: 1%;
+    font-size: 1rem;
+    margin-right: 0.5%;
+}
+
+.tarefasInput.addbnt{
+    font-size: 2rem;
+    padding: 0.5% 1%;
+    cursor: pointer;
     width: 2rem;
     height: 2rem;
-    border:  1px black solid;
-
+    justify-self: right;
+    align-self: flex-start;
 }
 
-
+ul#listaTarefas{
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+}
+ul#listaTarefas ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    background: white;
+    border-radius: 5px;
+}
+body.dark ul#listaTarefas li {
+    background: #333;
+  }
+  
+ul#listaTarefas li.completo{
+    text-decoration: line-through;
+    opacity: 0.6;
+  }

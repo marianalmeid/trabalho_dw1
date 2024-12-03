@@ -10,15 +10,23 @@
 <body>
     <div class="container">
         <header>
+            <div></div>
             <h1>Lista de Tarefas</h1>
-                <button id="tema" class="theme"></button>
+            <button id="tema" class="theme"></button>
         </header>
         <div class="tarefas">
-            <input type="text" id="tarefaInput" placeholder="+ tarefa">
-            <button id="addtarefa" class="addbtn">+</button>
+            <div class="tarefasInput">
+                <input type="text" id="tarefaInput" placeholder="+ tarefa">
+                <button id="addtarefa" class="addbtn">+</button>
+            </div>
+            <ul id="listaTarefas"></ul>
+            <div class="progresso">
+                <div class="barraProgresso"></div>
+            </div>
+            <p id="contagem">Tarefas Concluídas: 0/0</p>
+
+            </div>
         </div>
 
-    </div>
-    <script src="./trabalho.js"></script>
-</body>
+    <!-- pagina de contatos -->
 </html>
