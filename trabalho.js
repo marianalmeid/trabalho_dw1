@@ -1,8 +1,4 @@
-const siteTheme = getElementbyId("tema");
-const body = document.body;
-
-
-siteTheme.addEventListener("on click", () => {
-    body.classList.toggle("claro");
-    body.classList.toggle("escuro");
+const mudarTema = document.getElementById("tema");
+mudarTema.addEventListener("click", () =>{
+    document.body.classList.toggle("dark");
 });
