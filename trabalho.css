@@ -80,7 +80,50 @@ ul#listaTarefas li.completo{
     opacity: 0.6;
   }
 
+  .task-buttons button {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .progresso {
+    margin-top: 20px;
+    background: #ddd;
+    height: 1.5rem;
+    border-radius: 3px;
+  }
+  
+  #barraProgresso {
+    width: 0;
+    height: 100%;
+    background: purple ;
+    transition: width 0.3s;
+  }
 
+  .alunos{
+    width: 60%;
+    height: 60%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    z-index: 1000;
+  }
+  .hContatos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .hContatos button {
+    font-size: 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
 /*tema dark*/
 
 body.dark{

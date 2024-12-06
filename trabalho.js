@@ -13,52 +13,52 @@ const barraCont = document.getElementById("barraProgresso");
 let tarefasTotal = 0;
 let tarefasCompletas = 0;
 
-function progresso() {
+function updateProgresso() {
     const progress = tarefasTotal > 0 ? (tarefasCompletas/ tarefasTotal) * 100 : 0;
     barraCont.style.width = `${progress}%`;
-    contagem.textContent = `${tarefasCompletas} de ${tarefasTotal} tarefas concluídas`;
+    contagem.textContent = `Tarefas Concluídas: ${tarefasCompletas}/${tarefasTotal}`;
   }
   
 
-function addTarefa(tarefatext){
+function addtrf(tarefatext){
     if (!tarefatext) return;
 
     tarefasTotal++;
-    progresso();
+    updateProgresso();
 
     const li = document.createElement("li");
     li.innerHTML = `
     <span>${tarefatext}</span>
     <div class="task-buttons">
-      <button class="edit-btn">✏️</button>
-      <button class="delete-btn">🗑</button>
-      <button class="complete-btn">✔</button>
+      <button class="edit-btn">...</button>
+      <button class="delete-btn">x</button>
+      <button class="complete-btn">o</button>
     </div>`;
 
     li.querySelector(".complete-btn").addEventListener("click", () => {
-        if (!li.classList.contains("completed")) {
-          li.classList.add("completed");
+        if (!li.classList.contains("completo")) {
+          li.classList.add("completo");
           tarefasCompletas++;
         } else {
-          li.classList.remove("completed");
+          li.classList.remove("completo");
           tarefasCompletas--;
         }
-        updateProgress();
+        updateProgresso();
     });
 
     li.querySelector(".delete-btn").addEventListener("click", () => {
-        if (li.classList.contains("completed")) {
+        if (li.classList.contains("completo")) {
           tarefasCompletas--;
         }
         tarefasTotal--;
         li.remove();
-        updateProgress();
+        updateProgresso();
       });
     
-      li.querySelector(".edit-btn").addEventListener("click", () => {
-        const novaTarefa = prompt("Editar tarefa:", li.firstElementChild.textContent);
-        if (novaTarefa) {
-          li.firstElementChild.textContent = novaTarefa;
+    li.querySelector(".edit-btn").addEventListener("click", () => {
+      const novaTarefa = prompt("Editar tarefa:", li.firstElementChild.textContent);
+      if (novaTarefa) {
+        li.firstElementChild.textContent = novaTarefa;
         }
       });
     
@@ -66,14 +66,28 @@ function addTarefa(tarefatext){
 
 }
 
-addTaskButton.addEventListener("click", () => {
-    addTarefa(tarefaInput.value.trim());
+addTarefa.addEventListener("click", () => {
+    addtrf(tarefaInput.value.trim());
     tarefaInput.value = "";
   });
   
-  tarefaInput.addEventListener("keydown", (e) => {
+tarefaInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
-      addTarefa(tarefaInput.value.trim());
+      addtrf(tarefaInput.value.trim());
       tarefaInput.value = "";
     }
+  });
+
+
+  const contatos = document.getElementById("contatos");
+  const closebtn = document.getElementById("close");
+  
+  document.addEventListener("keydown", (e) => {
+    if (e.ctrlKey && e.key === "h") {
+      contatos.style.display = "block";
+    }
+  });
+  
+  closebtn.addEventListener("click", () => {
+    contatos.style.display = "none";
   });
