@@ -28,21 +28,30 @@ function addtrf(tarefatext){
 
     const li = document.createElement("li");
     li.innerHTML = `
-    <span>${tarefatext}</span>
+     <div class="task-content">
+     <input type="checkbox" class="checkbtn" />
+      <span>${tarefatext}</span>
+    </div>
     <div class="task-buttons">
-      <button class="edit-btn">...</button>
-      <button class="delete-btn">x</button>
-      <button class="complete-btn">o</button>
+      <button class="edit-btn">
+        <span class="material-symbols-outlined"> edit </span>
+      </button>
+      <button class="delete-btn">
+        <span class="material-symbols-outlined"> delete </span>
+      </button>
     </div>`;
 
-    li.querySelector(".complete-btn").addEventListener("click", () => {
-        if (!li.classList.contains("completo")) {
-          li.classList.add("completo");
-          tarefasCompletas++;
-        } else {
-          li.classList.remove("completo");
-          tarefasCompletas--;
-        }
+  const checkbox = li.querySelector(".checkbtn");
+  const taskText = li.querySelector("span");
+
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+      tarefasCompletas++;
+      taskText.classList.add("completo");
+    } else {
+      tarefasCompletas--;
+      taskText.classList.remove("completo");
+    }
         updateProgresso();
     });
 
@@ -51,16 +60,19 @@ function addtrf(tarefatext){
           tarefasCompletas--;
         }
         tarefasTotal--;
+        tarefasCompletas--;
         li.remove();
         updateProgresso();
       });
     
-    li.querySelector(".edit-btn").addEventListener("click", () => {
-      const novaTarefa = prompt("Editar tarefa:", li.firstElementChild.textContent);
-      if (novaTarefa) {
-        li.firstElementChild.textContent = novaTarefa;
+      li.querySelector(".edit-btn").addEventListener("click", () => {
+        const span = li.querySelector("span");
+        const novaTarefa = prompt("Editar tarefa:", span.textContent);
+        if (novaTarefa) {
+          span.textContent = novaTarefa; // Atualiza apenas o texto da tarefa
         }
       });
+      
     
       listaTarefas.appendChild(li);
 
