@@ -46,23 +46,26 @@ function addtrf(tarefatext){
 
   checkbox.addEventListener("change", () => {
     if (checkbox.checked) {
+      taskText.classList.add("completo")
       tarefasCompletas++;
-      taskText.classList.add("completo");
     } else {
+      taskText.classList.remove("completo")
       tarefasCompletas--;
-      taskText.classList.remove("completo");
+     
     }
         updateProgresso();
     });
 
     li.querySelector(".delete-btn").addEventListener("click", () => {
-        if (li.classList.contains("completo")) {
-          tarefasCompletas--;
-        }
-        tarefasTotal--;
+     
+      if(taskText.classList.contains("completo")) {
         tarefasCompletas--;
+      }
+        tarefasTotal--;
+        
         li.remove();
         updateProgresso();
+        
       });
     
       li.querySelector(".edit-btn").addEventListener("click", () => {

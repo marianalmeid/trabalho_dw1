@@ -6,14 +6,20 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="./trabalho.css">
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Chela+One&family=Edu+NSW+ACT+Foundation:wght@400..700&family=Hind+Mysuru:wght@300;400;500;600;700&family=Kite+One&family=Molle&family=Rubik+Spray+Paint&family=Send+Flowers&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Chela+One&family=Edu+NSW+ACT+Foundation:wght@400..700&family=Kite+One&family=Molle&family=Rubik+Spray+Paint&family=Send+Flowers&display=swap');
+    </style>
 </head>
 
 <body>
     <div class="container">
         <header>
             <div></div>
-            <h1>Lista de Tarefas</h1>
-            <button id="tema" class="theme"></button>
+            <h1>Checklist</h1>
+            <button id="tema" class="theme">
+                <span class="material-symbols-outlined"> sunny </span>
+            </button>
         </header>
         <div class="tarefas">
             <div class="tarefasInput">
@@ -32,12 +38,18 @@
     <!-- pagina de contatos -->
     
     <div id="contatos" class="alunos">
+        
         <div class="hContatos">
           <h2>Desenvolvimento Web 1</h2>
           <button id="close">×</button>
         </div>
         <p>Alunos:</p>
-        <p>aaaaa 99999-9999 <a href=" " target="_blank">WhatsApp</a></p>
+        <p class="numero">José Eduardo Cordeiro dos Santos <br> 99999-9999 <a href=" " target="_blank">
+            <span class="material-symbols-outlined">chat</span>
+        </a></p>
+        <p class="numero">Mariana Cristina Almeida <br>98859-5025 <a href=" " target="_blank">
+            <span class="material-symbols-outlined">chat</span>
+        </a></p>
     </div>
      <script src="./trabalho.js"></script>
 </body>

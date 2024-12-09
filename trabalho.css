@@ -1,9 +1,21 @@
 
+html, body{
+background-color: rgb(195, 136, 250);
+margin: 0%;
+padding: 0%;
+height: 100%;
+
+}
 
 body{
-   margin: 0;
-   padding: 0;
-   transition: background-color 0.2s, color 0.2s;
+   
+   height: 100%;
+   width: 100%;
+  background: -moz-linear-gradient(to bottom, rgb(245, 159, 245), rgb(195, 136, 250));
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: background-color 1s, color 1s;
+ 
 }
 
 .container{
@@ -12,6 +24,7 @@ body{
     padding: 0;
     margin: 0;
     flex-direction: column;
+   
 }
 
 header{
@@ -19,49 +32,61 @@ header{
     display: flex;
     justify-content: space-between ;
     align-items: center;
-}   
+  font-family: "Send Flowers", cursive;
+  font-size: 2rem;
+  color: rgb(99, 11, 99);
+  font-weight: bold;
+  text-shadow: #571564 0px 2px 2px;
+ 
+  
+}
 
 .theme{
-    background-color: none;
-    height: 2rem;
-    width: 2rem;
+  color: purple;
+   background-color: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 4px;
     cursor: pointer;
-    background-color: white;
+    background-color: plum;
     border: 2px purple solid;
     align-self: flex-start;
 }
 .tarefas{
-    margin-top: 2%;
+    margin-top: 1%;
     justify-content: center;
     margin-left: 25%;
     margin-right: 25%;
+    font-family: "Hind Mysuru", sans-serif;
+    letter-spacing: 0.1px;
+    font-weight: bold;
 
 }
 
 .tarefasInput{
 display: flex;
-height: 2rem;
+height: 2.5rem;
 }
 
 .tarefasInput input{
     flex: 1;
     font-size: 1rem;
     margin-right: 0.5%;
-    background-color: rgb(243, 180, 243);
+    background-color: rgb(248, 209, 248);
     color: rgb(63, 0, 63);
     font-weight: bold;
-    border: 1px purple solid;
+    border: 2px purple solid;
     border-radius: 3px;
 
 }
 
 .tarefasInput .addbtn{
     color: white;
-    font-size: 1rem;
+    font-size: 1.5rem;
     cursor: pointer;
-    width: 2rem;
-    height: 2rem;
-    border: 1px white solid;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 2px white solid;
     border-radius: 5px;
     font-weight: bold;
     background-color: rgb(63, 0, 63);
@@ -94,7 +119,8 @@ ul#listaTarefas li.completo span{
   align-items: center;
   padding: 10px;
   margin: 5px 0;
-  background-color: #f9f9f9; 
+  background-color: rgb(252, 226, 252); 
+  font-weight: normal;
   border-radius: 5px;
   transition: background 0.3s, border 0.3s;
 }
@@ -107,11 +133,12 @@ ul#listaTarefas li.completo span{
 }
 
 /* Checkbox para concluir tarefa */
-.checkbtn {
+.checkbtn{
+  appearance: none;
   width: 20px;
   height: 20px;
   cursor: pointer;
-  border: 2px solid #333; 
+  border: 2px purple solid; 
   border-radius: 4px;
   display: flex;
   justify-content: center;
@@ -120,14 +147,14 @@ ul#listaTarefas li.completo span{
 }
 
 
-.checkbtn:checked {
-  background-color: purple;
+.checkbtn:checked{
+  background-color: rgb(131, 1, 131);
   border-color: purple;
 }
 
 .checkbtn:checked::before {
-  color: #fff;
-  font-size: 14px;
+  content: '⭐';
+  font-size: 10px;
 }
 
 .task-buttons {
@@ -140,7 +167,7 @@ ul#listaTarefas li.completo span{
   background: none;
   border: none;
   cursor: pointer;
-  color: #555; 
+  color: rgb(63, 0, 63);
 }
 
 .task-buttons button:hover {
@@ -168,36 +195,244 @@ ul#listaTarefas li.completo span{
   }
 
   .alunos{
-    width: 60%;
-    height: 60%;
+    width: 80%;
+    height: 80%;
     position: fixed;
     top: 50%;
     left: 50%;
+    color: rgb(70, 2, 70);
+    font-family: "Hind Mysuru", sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.1px;
     transform: translate(-50%, -50%);
-    background: #fff;
-    padding: 20px;
+    background: rgb(245, 159, 245);
+    box-shadow: #571564 0px 0px 4px;
+    padding: 50px;
     border-radius: 10px;
     display: none;
     z-index: 1000;
+    font-weight: bold;
   }
   .hContatos{
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  
+  .alunos .numero{
+    margin-left: 10px;
+    font-weight: normal;
+  }
   .hContatos button {
     font-size: 20px;
     border: none;
     background: none;
     cursor: pointer;
   }
+  #close{
+    font-size: 50px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-right: -2%;
+    margin-top: -10%;
+    
+  }
 /*tema dark*/
 
 body.dark{
-    background-color: black;
-    color: blueviolet;
+  background: -moz-linear-gradient(to bottom, rgb(83, 13, 83), rgb(15, 2, 22));
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(238, 163, 245);
 }
-body.dark.container{
-    color:blueviolet
+
+body.dark header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between ;
+  align-items: center;
+font-family: "Send Flowers", cursive;
+font-size: 2rem;
+color: rgb(204, 147, 204);
+font-weight: bold;
+text-shadow: #7b6580 0px 2px 2px;
+
+}
+
+body.dark .theme{
+color: plum;
+ background-color: none;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: rgb(66, 5, 66);
+  border: 2px plum solid;
+  align-self: flex-start;
+}
+.tarefas{
+  margin-top: 1%;
+  justify-content: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  font-family: "Hind Mysuru", sans-serif;
+  letter-spacing: 0.1px;
+  font-weight: bold;
+
+}
+
+body.dark .tarefasInput input{
+  flex: 1;
+  font-size: 1rem;
+  margin-right: 0.5%;
+  background-color: rgb(99, 4, 99);
+  color: plum;
+  font-weight: bold;
+  border: 2px rgb(199, 137, 199) solid;
+  border-radius: 3px;
+
+}
+
+body.dark .tarefasInput .addbtn{
+  color: plum;
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 2px plum solid;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: rgb(117, 28, 117);
+}
+
+
+
+ul#listaTarefas li.completo span{
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+
+body.dark #listaTarefas li {
+display: flex;
+justify-content: space-between; 
+align-items: center;
+padding: 10px;
+margin: 5px 0;
+background-color: purple; 
+font-weight: normal;
+border-radius: 5px;
+transition: background 0.3s, border 0.3s;
+}
+
+
+.task-content {
+display: flex;
+align-items: center;
+gap: 10px; 
+}
+
+/* Checkbox para concluir tarefa */
+.checkbtn{
+appearance: none;
+width: 20px;
+height: 20px;
+cursor: pointer;
+border: 2px plum solid; 
+border-radius: 4px;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: background-color 0.3s, border-color 0.3s;
+}
+
+
+.checkbtn:checked{
+background-color: rgb(131, 1, 131);
+border-color: purple;
+}
+
+.checkbtn:checked::before {
+content: '⭐';
+font-size: 10px;
+}
+
+.task-buttons {
+display: flex;
+gap: 10px;
+}
+
+.task-buttons button {
+font-size: 16px;
+background: none;
+border: none;
+cursor: pointer;
+color: rgb(63, 0, 63);
+}
+
+.task-buttons button:hover {
+transform: scale(1.1);
+color: #000; 
+}
+
+.completo {
+text-decoration: line-through;
+opacity: 0.6;
+}
+
+.progresso {
+  margin-top: 20px;
+  background: #ddd;
+  height: 1.5rem;
+  border-radius: 3px;
+}
+
+#barraProgresso {
+  width: 0;
+  height: 100%;
+  background:rgb(63, 0, 63) ;
+  transition: width 0.3s;
+}
+
+.alunos{
+  width: 80%;
+  height: 80%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  color: rgb(70, 2, 70);
+  font-family: "Hind Mysuru", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.1px;
+  transform: translate(-50%, -50%);
+  background: rgb(245, 159, 245);
+  box-shadow: #571564 0px 0px 4px;
+  padding: 50px;
+  border-radius: 10px;
+  display: none;
+  z-index: 1000;
+  font-weight: bold;
+}
+.hContatos{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.alunos .numero{
+  margin-left: 10px;
+  font-weight: normal;
+}
+.hContatos button {
+  font-size: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+#close{
+  font-size: 50px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-right: -2%;
+  margin-top: -10%;
 }
