@@ -196,11 +196,12 @@ ul#listaTarefas li.completo span{
     height: 100%;
     background:rgb(63, 0, 63) ;
     transition: width 0.3s;
+    border-radius: 3px;
   }
 
   .alunos{
-    width: 80%;
-    height: 80%;
+    width: 60%;
+    height: 60%;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -211,10 +212,10 @@ ul#listaTarefas li.completo span{
     transform: translate(-50%, -50%);
     background: rgb(245, 159, 245);
     box-shadow: #571564 0px 0px 4px;
-    padding: 50px;
     border-radius: 10px;
-    display: none;
-    z-index: 1000;
+    padding-left: 1%;
+    display: flex;
+    flex-direction: column;
     font-weight: bold;
   }
   .hContatos{
@@ -223,24 +224,32 @@ ul#listaTarefas li.completo span{
     align-items: center;
   }
   .alunos .numero{
-    margin-left: 10px;
     font-weight: normal;
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 40% 0% 5%;
+    line-height: 0%;
+
   }
   .hContatos button {
     font-size: 20px;
     border: none;
     background: none;
     cursor: pointer;
+    transition: 1s;
+  }
+  .alunos a:hover {
+   color: #bd52d3;
   }
   #close{
     font-size: 50px;
     border: none;
     background: none;
     cursor: pointer;
-    margin-right: -2%;
-    margin-top: -10%;
-    
+    align-self: flex-start;
+    margin-right: 1%; 
   }
+ 
 /*tema dark*/
 html, body.dark{
   background-color: rgb(15, 2, 22);
@@ -372,9 +381,6 @@ color: #000;
 }
 
 .dark .alunos{
-  width: 80%;
-  height: 80%;
-  position: fixed;
   top: 50%;
   left: 50%;
   color: plum;
@@ -384,16 +390,23 @@ color: #000;
   transform: translate(-50%, -50%);
   background: rgb(83, 7, 83);
   box-shadow: #1a011f 0px 0px 4px;
-  padding: 50px;
   border-radius: 10px;
-  display: none;
-  z-index: 1000;
+  padding-left: 1%;
+  display: flex;
+  flex-direction: column;
   font-weight: bold;
 }
 
-.dark a span, .dark #close{
-  color: bisque;
+.dark #close{
+  color: plum;
 }
+.dark .alunos a {
+  color: plum;
+ }
+.dark .alunos a:hover {
+  color: purple;
+ }
+
 .dark #contagem{
   color: plum;
 }
