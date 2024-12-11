@@ -14,17 +14,20 @@ body{
   background: -moz-linear-gradient(to bottom, rgb(245, 159, 245), rgb(195, 136, 250));
   background-size: cover;
   background-repeat: no-repeat;
-  transition: background-color 1s, color 1s;
+  transition: background-color 2s, color 2s;
  
 }
 
 .container{
     display: flex;
-    width: 100%;
+    width: 99.5%;
     padding: 0;
-    margin: 0;
+    margin-left: 0.5%;
     flex-direction: column;
-   
+
+    background-image: url(./butterflies.png);
+    background-size: 5rem;
+    background-repeat: no-repeat;
 }
 
 header{
@@ -54,6 +57,7 @@ header{
 }
 .tarefas{
     margin-top: 1%;
+    color: rgb(100, 4, 100);
     justify-content: center;
     margin-left: 25%;
     margin-right: 25%;
@@ -81,15 +85,15 @@ height: 2.5rem;
 }
 
 .tarefasInput .addbtn{
-    color: white;
+    color: rgb(80, 8, 80);
     font-size: 1.5rem;
     cursor: pointer;
     width: 2.5rem;
     height: 2.5rem;
-    border: 2px white solid;
+    border: 2px purple solid;
     border-radius: 5px;
     font-weight: bold;
-    background-color: rgb(63, 0, 63);
+    background-color: rgb(248, 209, 248);
 }
 
 ul#listaTarefas{
@@ -153,8 +157,8 @@ ul#listaTarefas li.completo span{
 }
 
 .checkbtn:checked::before {
-  content: '⭐';
-  font-size: 10px;
+  content: '🦋';
+  font-size: 15px;
 }
 
 .task-buttons {
@@ -172,7 +176,7 @@ ul#listaTarefas li.completo span{
 
 .task-buttons button:hover {
   transform: scale(1.1);
-  color: #000; 
+  color: bisque; 
 }
 
 .completo {
@@ -238,7 +242,9 @@ ul#listaTarefas li.completo span{
     
   }
 /*tema dark*/
-
+html, body.dark{
+  background-color: rgb(15, 2, 22);
+}
 body.dark{
   background: -moz-linear-gradient(to bottom, rgb(83, 13, 83), rgb(15, 2, 22));
   background-size: cover;
@@ -246,7 +252,12 @@ body.dark{
   color: rgb(238, 163, 245);
 }
 
-body.dark header{
+.dark .container{
+  background-image: url(./butterflies\ \(1\).png);
+    background-size: 5rem;
+    background-repeat: no-repeat;
+}
+.dark header{
   width: 100%;
   display: flex;
   justify-content: space-between ;
@@ -259,7 +270,7 @@ text-shadow: #7b6580 0px 2px 2px;
 
 }
 
-body.dark .theme{
+.dark .theme{
 color: plum;
  background-color: none;
   height: 2.5rem;
@@ -270,18 +281,8 @@ color: plum;
   border: 2px plum solid;
   align-self: flex-start;
 }
-.tarefas{
-  margin-top: 1%;
-  justify-content: center;
-  margin-left: 25%;
-  margin-right: 25%;
-  font-family: "Hind Mysuru", sans-serif;
-  letter-spacing: 0.1px;
-  font-weight: bold;
 
-}
-
-body.dark .tarefasInput input{
+.dark .tarefasInput input{
   flex: 1;
   font-size: 1rem;
   margin-right: 0.5%;
@@ -293,7 +294,7 @@ body.dark .tarefasInput input{
 
 }
 
-body.dark .tarefasInput .addbtn{
+.dark .tarefasInput .addbtn{
   color: plum;
   font-size: 1.5rem;
   cursor: pointer;
@@ -307,13 +308,7 @@ body.dark .tarefasInput .addbtn{
 
 
 
-ul#listaTarefas li.completo span{
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-
-
-body.dark #listaTarefas li {
+.dark #listaTarefas li {
 display: flex;
 justify-content: space-between; 
 align-items: center;
@@ -325,15 +320,10 @@ border-radius: 5px;
 transition: background 0.3s, border 0.3s;
 }
 
-
-.task-content {
-display: flex;
-align-items: center;
-gap: 10px; 
+.dark .task-content{
+  color: plum;
 }
-
-/* Checkbox para concluir tarefa */
-.checkbtn{
+.dark .checkbtn{
 appearance: none;
 width: 20px;
 height: 20px;
@@ -347,92 +337,63 @@ transition: background-color 0.3s, border-color 0.3s;
 }
 
 
-.checkbtn:checked{
-background-color: rgb(131, 1, 131);
-border-color: purple;
+.dark .checkbtn:checked{
+background-color: plum;
+border-color: plum;
 }
 
-.checkbtn:checked::before {
-content: '⭐';
-font-size: 10px;
-}
 
-.task-buttons {
-display: flex;
-gap: 10px;
-}
-
-.task-buttons button {
+.dark .task-buttons button {
 font-size: 16px;
 background: none;
 border: none;
 cursor: pointer;
-color: rgb(63, 0, 63);
+color: plum;
 }
 
-.task-buttons button:hover {
+.dark .task-buttons button:hover {
 transform: scale(1.1);
 color: #000; 
 }
 
-.completo {
-text-decoration: line-through;
-opacity: 0.6;
-}
 
-.progresso {
+.dark .progresso {
   margin-top: 20px;
-  background: #ddd;
+  background: rgb(20, 2, 29);
   height: 1.5rem;
   border-radius: 3px;
 }
 
-#barraProgresso {
+.dark #barraProgresso {
   width: 0;
   height: 100%;
-  background:rgb(63, 0, 63) ;
+  background: rgb(236, 163, 236) ;
   transition: width 0.3s;
 }
 
-.alunos{
+.dark .alunos{
   width: 80%;
   height: 80%;
   position: fixed;
   top: 50%;
   left: 50%;
-  color: rgb(70, 2, 70);
+  color: plum;
   font-family: "Hind Mysuru", sans-serif;
   font-size: 1.2rem;
   letter-spacing: 0.1px;
   transform: translate(-50%, -50%);
-  background: rgb(245, 159, 245);
-  box-shadow: #571564 0px 0px 4px;
+  background: rgb(83, 7, 83);
+  box-shadow: #1a011f 0px 0px 4px;
   padding: 50px;
   border-radius: 10px;
   display: none;
   z-index: 1000;
   font-weight: bold;
 }
-.hContatos{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+.dark a span, .dark #close{
+  color: bisque;
 }
-.alunos .numero{
-  margin-left: 10px;
-  font-weight: normal;
-}
-.hContatos button {
-  font-size: 20px;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-#close{
-  font-size: 50px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  margin-right: -2%;
-  margin-top: -10%;
+.dark #contagem{
+  color: plum;
 }
