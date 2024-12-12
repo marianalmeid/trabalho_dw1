@@ -72,7 +72,7 @@ function addtrf(tarefatext){
         const span = li.querySelector("span");
         const novaTarefa = prompt("Editar tarefa:", span.textContent);
         if (novaTarefa) {
-          span.textContent = novaTarefa; // Atualiza apenas o texto da tarefa
+          span.textContent = novaTarefa;
         }
       });
       
