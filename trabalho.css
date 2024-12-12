@@ -198,7 +198,9 @@ ul#listaTarefas li.completo span{
     transition: width 0.3s;
     border-radius: 3px;
   }
-
+  #contatos{
+    display: none;
+  }
   .alunos{
     width: 60%;
     height: 60%;
